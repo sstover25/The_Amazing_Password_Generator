@@ -19,10 +19,10 @@ function writePassword() {
 
 
 // Arrays of potential characters
-var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var numbers = ['0','1','2','3','4','5','6','7','8','9'];
-var special = [' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','^','`','_','~'];
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var special = " !#$%&()*+-,./:;<>=?@^`~_";
 
 // The below variables set up the functions to check which character types a user wants to include in the password.
 var lowercaseLetters = true;
@@ -84,8 +84,29 @@ var getPasswordLength = function() {
   }
 }
 
+var characterChoices = 0;
+var characterChoicesNumber = function() {
+
+  // This section adds up to determine how many character types the user selected.
+  // var characterChoices = 0;
+
+  if(lowercaseLetters === true) {
+    characterChoices = characterChoices + 1;
+  }
+  if(uppercaseLetters === true) {
+    characterChoices = characterChoices + 1; 
+  }
+  if(numericCharacters === true) {
+    characterChoices = characterChoices + 1;
+  }
+  if(specialCharacters === true) {
+    characterChoices = characterChoices + 1;
+  }
+}
+
 //this is the function that pull together everything above to create the password.
 function generatePassword() {
+
   lowercaseLettersChoice();
   uppercaseLettersChoice();
   numericCharactersChoice();
@@ -99,6 +120,33 @@ function generatePassword() {
     getPasswordLength();
     console.log(lowercaseLetters, uppercaseLetters, numericCharacters, specialCharacters, passLength);
   }
+
+  characterChoicesNumber();
+
+console.log(characterChoices);
+
+var generatedPassword = "";
+
+    // This section instructs the console to pull random items from the arrays that the user has selected. 
+    for (var i = 0; i < passLength; ++i) {
+      if(lowercaseLetters === true) {
+        function character(passLength, characterChoices) {
+          var num = Math.ceil(Math.random() * (passLength - characterChoices + 1) + characterChoices);
+        }
+      }
+      if(uppercaseLetters === true) {
+        characterChoices ++;
+      }
+      if(numericCharacters === true) {
+        characterChoices ++;
+      }
+      if(specialCharacters === true) {
+        characterChoices ++;
+      }
+    }
+
+
+  
 }
 
 generatePassword();
