@@ -123,30 +123,40 @@ function generatePassword() {
 
   characterChoicesNumber();
 
-console.log(characterChoices);
+  console.log(characterChoices);
 
-var generatedPassword = "";
+  var generatedPassword = [];
 
-    // This section instructs the console to pull random items from the arrays that the user has selected. 
-    for (var i = 0; i < passLength; ++i) {
-      if(lowercaseLetters === true) {
-        function character(passLength, characterChoices) {
-          var num = Math.ceil(Math.random() * (passLength - characterChoices + 1) + characterChoices);
-        }
-      }
-      if(uppercaseLetters === true) {
-        characterChoices ++;
-      }
-      if(numericCharacters === true) {
-        characterChoices ++;
-      }
-      if(specialCharacters === true) {
-        characterChoices ++;
-      }
+  // This section instructs the console to pull random items from the strings of the character types that the user has selected. 
+  for (var i = 0; i < passLength; ++i) {
+    if(lowercaseLetters === true) {
+      var num = lowercase.charAt(Math.ceil(Math.random() * (lowercase.length - characterChoices)));
+      generatedPassword.push(num);
     }
+    if(uppercaseLetters === true) {
+      var num = uppercase.charAt(Math.ceil(Math.random() * (uppercase.length - characterChoices)));
+      generatedPassword.push(num);
+    }
+    if(numericCharacters === true) {
+      var num = numbers.charAt(Math.ceil(Math.random() * (numbers.length - characterChoices)));
+      generatedPassword.push(num);
+    }
+    if(specialCharacters === true) {
+      var num = special.charAt(Math.ceil(Math.random() * (special.length - characterChoices)));
+      generatedPassword.push(num);
+    }
+  }
 
+  // This check is added incase the number of characters added above exceeds the inputted password length requirement. If it is, then this action removes the last item from the array.
+  while (generatedPassword.length > passLength) {
+    generatedPassword.pop();
+  }
 
-  
+  console.log(generatedPassword);
+
+  // generatedPassword.toString();
+
+  // console.log(generatedPassword);
 }
 
 generatePassword();
