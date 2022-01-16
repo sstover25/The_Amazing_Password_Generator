@@ -1,8 +1,10 @@
-# 03 JavaScript: Password Generator
+# JavaScript Challenge: Password Generator
 
-Create an application that generates a random password based on user-selected criteria. The app runs in the browser and features dynamically updated HTML and CSS powered by your JavaScript code. It has a clean and polished user interface and is responsive, which ensures that it adapts to multiple screen sizes.
+## Description
 
-If you are unfamiliar with special characters, take a look at some [examples of special characters on the OWASP Foundation website](https://www.owasp.org/index.php/Password_special_characters).
+```
+Client requested that functionality be implemented to create a randomized password generator. This is being done to increase security for sensitive data. This password generator now functions to create a password based on the user's preference for character choice and password length.
+```
 
 ## User Story
 
@@ -15,21 +17,13 @@ SO THAT I can create a strong password that provides greater security
 ## Acceptance Criteria
 
 ```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+- It is done when a user clicks the button to generate a password and is then presented with a series of prompts for password criteria.
+- It is done when a user can select the password criteria from the prompts for said criteria.
+- It is done when a prompt to set the password length appears for a user and then the user may choose any number of characters between 8 to 128.
+- It is done when the user can choose to include the following character types for their password: lowercase letters, uppercase letter, numbers, and/or special characters.
+- It is done when the users inputs for each prompt are validated and require the user to select at least one character type.
+- It is done when a password is generated that matches the selected criteria after all prompts are answered.
+- It is done when the generated password is displayed on the page in the textbox under Generate a Password.
 ```
 
 The following image demonstrates the application functionality:
@@ -40,9 +34,17 @@ The following image demonstrates the application functionality:
 
 You are required to submit the following for review:
 
-* The URL of the deployed application.
+- The URL of the deployed application: https://sstover25.github.io/The_Amazing_Password_Generator/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+- The URL of the GitHub repository: https://github.com/sstover25/The_Amazing_Password_Generator
 
-- - -
+---
+
+## Credits
+
+```
+Coding assistance from KU bootcamp modules, https://www.w3schools.com, https://developer.mozilla.org/, and Stack Overflow.
+
+```
+
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
