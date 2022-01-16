@@ -92,7 +92,7 @@ var generatePassword = function() {
 
   // This statement ensures that the user has selected at least 1 of the 4 character types for the password.
   if(lowercaseLetters === false && uppercaseLetters === false && numericCharacters === false && specialCharacters === false) {
-    window.alert("You must select 'OK' on at least one of the following character type options: Lowercase letters, Uppercase letters, Numbers, and Special characters.");
+    window.alert("You must select 'OK' on at least one of the following character type options: lowercase letters, uppercase letters, numbers, and special characters.");
     generatePassword();
   } else {
     getPasswordLength();
@@ -125,6 +125,9 @@ var generatePassword = function() {
     initialPassword.pop();
   }
 
+  // This line randomizes the initialPassword array so that the password will appear in random order to make the password stronger.
+  initialPassword.sort(function(){return 0.5 - Math.random()}); //copyright of this code line is to W3schools: https://www.w3schools.com/js/js_array_sort.asp
+  
   // This line changes initialPassword from an Array to a String without commas inbetween all characters. It then returns the value to the generatePassword function.
   return initialPassword.join('');
 
@@ -136,7 +139,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
